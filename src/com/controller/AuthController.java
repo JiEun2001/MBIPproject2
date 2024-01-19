@@ -34,14 +34,62 @@ public class AuthController {
 		return modelAndView;
 	}
 
-	@PostMapping("/signIn")
-	public ModelAndView signIn(@RequestParam("email") String email, @RequestParam("password") String password,
-			HttpSession session) {
+	@PostMapping("/authenticate")
+    public ModelAndView authenticate(@RequestParam("email") String email,
+                               @RequestParam("password") String password,
+                               HttpSession session) {
 
-		ModelAndView modelAndView = new ModelAndView("/signIn");
+        String dbURL = "jdbc:mysql://localhost:3306/mbip";
+        String dbusername = "root";
+        String dbpassword = "";
 
-		return modelAndView;
-	}
+        ModelAndView modelAndView = new ModelAndView();
+        
+        try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+
+			Connection conn = DriverManager.getConnection(dbURL, dbusername, dbpassword);
+			System.out.println("connection successfully opened :" + conn.getMetaData());
+
+			 // Creating JDBC Statement
+	        String sql = "SELECT * FROM user WHERE email = ? AND password = ?";
+	        PreparedStatement stnt = conn.prepareStatement(sql);
+	        stnt.setString(1, email);
+	        stnt.setString(2,password);
+
+	        //execute query
+	        ResultSet rs = stnt.executeQuery();
+	        
+	        //if exist
+	        if(rs.next()) {
+	        	//success
+	        	
+	        	int uid = rs.getInt("uid");
+	        	String name= rs.getString("username");
+	        	session.setAttribute("uid",uid);
+	        	session.setAttribute("name", name);
+	        	
+//	        	modelAndView.setViewName("/userHomepage");
+	        	modelAndView.setViewName("redirect:/user/");
+	        }else {
+	        	//failed
+	        	
+	        	
+	        }
+	        
+	        
+			// close
+			conn.close();
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		} catch (ClassNotFoundException ex) {
+			ex.printStackTrace();
+		}
+        
+
+        return modelAndView;
+    }
+	
 
 	@GetMapping("/signUp")
 	public ModelAndView signUp() {
@@ -60,7 +108,7 @@ public class AuthController {
 		String dbpassword = "";
 		
 		boolean check = false;
-		ModelAndView modelAndView = null;
+		ModelAndView modelAndView = new ModelAndView();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -89,7 +137,7 @@ public class AuthController {
 				}
 
 			}
-			if(!check || password.equals(confirmpwd)) {
+			if(!check  && password != null &&  password.equals(confirmpwd)) {
 				String sqlstmt = "INSERT INTO user (email, password,username,address,phone) VALUES (?,?,?,?,?)";
 				PreparedStatement stmt = conn.prepareStatement(sqlstmt);
 
@@ -104,8 +152,8 @@ public class AuthController {
 	      
 	            modelAndView = new ModelAndView("redirect:/account/"); // redirect to login page
 			}else {
-
-		        modelAndView = new ModelAndView("/signUp"); // redirect to signup
+				modelAndView.setViewName("/signUp");
+			    modelAndView.addObject("error", "Registration failed. Please try again.");
 			}
 			// close
 			conn.close();

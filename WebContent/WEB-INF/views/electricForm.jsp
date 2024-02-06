@@ -198,6 +198,9 @@
         }
     </style>
 </head>
+
+<jsp:include page="header.jsp" />
+
 <body>
 	<form action="/MBIPproject2/electricForm/submit-consumption" method="post">
     <div class="div">

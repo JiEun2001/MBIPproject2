@@ -198,6 +198,9 @@
         }
     </style>
 </head>
+
+<jsp:include page="header.jsp" />
+
 <body>
 	<form action="/MBIPproject2/Recycle/submit-reConsumption" method="post">
     <div class="div">

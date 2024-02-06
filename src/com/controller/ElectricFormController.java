@@ -28,36 +28,6 @@ public class ElectricFormController {
 		return modelAndView;
 	}
 
-//    @PostMapping("/submit-consumption")
-//    public String submitConsumption(@RequestParam("Uid") String Uid, @RequestParam("date") String date,HttpSession session) {
-//        String dbURL = "jdbc:mysql://localhost:3306/mbip";
-//        String dbUsername = "root";
-//        String dbPassword = "";
-//        
-//
-//        try {
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//            Connection conn = DriverManager.getConnection(dbURL, dbUsername, dbPassword);
-//            int Uid = (int) session.getAttribute("Uid");
-//            String sql = "INSERT INTO electric_consumption (Uid, date, meter_reading, meter_number, comments) VALUES (?, ?, ?, ?, ?,)";
-//            PreparedStatement statement = conn.prepareStatement(sql);
-//            	  statement.setInt(1,Uid);
-//                statement.setString(2, electric.getDate());
-//                statement.setInt(3, electric.getMeterReading());
-//                statement.setString(4, electric.getMeterNumber());
-//                statement.setString(5, electric.getComments());
-//
-//                statement.executeUpdate();
-//            
-//        } catch (ClassNotFoundException | SQLException ex) {
-//            ex.printStackTrace();
-//            // Redirect to an error page and pass the error message as a request attribute
-//            return "redirect:/errorPage?errorMessage=An error occurred while submitting the form. Please try again later.";
-//        }
-//
-//        return "redirect:/account/";
-//    }
-
 	@PostMapping("/submit-consumption")
 	public ModelAndView SubmitElectric(@RequestParam("date") String date,
 			@RequestParam("meterReading") int meterReading, 

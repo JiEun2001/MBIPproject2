@@ -13,7 +13,7 @@ public class UserHomepageController {
 
     @GetMapping("/")
     public ModelAndView userHomePage() {
-        return new ModelAndView("/userHomepage");
+        return new ModelAndView("/Home");
     }
 
     @GetMapping("/logout")

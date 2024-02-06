@@ -47,7 +47,7 @@ public class FormController {
     	//waterUsage.setUid((String) session.getAttribute("UID"));
         dbconnect.saveWaterUsage(waterUsage);
 
-        return "redirect:/Homepage"; // Redirect to a success page or similar
+        return "redirect:/user/"; // Redirect to a success page or similar
     }
 
 }

@@ -85,7 +85,7 @@
 									<button class="btn btn-outline-dark btn-lg px-5" type="submit">Register</button>
 									<p class="small fw-bold mt-2 pt-1 mb-0">
 										Already have an account? <a
-											href="${pageContext.request.contextPath}/"
+											href="${pageContext.request.contextPath}/account/"
 											class="link-danger">Sign In!</a>
 									</p>
 								</form>

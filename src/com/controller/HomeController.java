@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-    @GetMapping("/Homepage")
+    @GetMapping("/")
     public String home() {
         return "/Homepage"; // Redirect to the form page or a home page
     }

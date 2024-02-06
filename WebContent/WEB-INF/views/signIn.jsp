@@ -41,7 +41,7 @@
                         <div class="alert alert-danger" role="alert">${error}</div>
                     </c:if>
 
-					<form action="/MBIPproject2/authenticate" method="post">
+					<form action="/MBIPproject2/account/authenticate" method="post">
 
 						<p class="text-center mt-3">Low Carbon Monitoring System</p>
 						<p class="text-center mt-3">Your go-to tool for tracking

@@ -4,7 +4,7 @@
 <html lang="pt-br" data-bs-theme="dark">
 
 <head>
-   <title>Viajar é Preciso</title>
+   <title>MBIP</title>
   <!-- LINKS BOOTSTRAP -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -25,6 +25,11 @@
     color: #ffffff; /* White color */
   }
   
+  .welcome-brand-white {
+    color: #8F8F8F; /* White color */
+  }
+  
+  
 	
   </style>
 </head>
@@ -33,82 +38,8 @@
 
 
   <!-- nav bar -->
-  <nav class="navbar navbar-expand-lg bg-nav-green p-4 ">
-    <div class="container">
-
-      <!-- Logo -->
-      <a class=" navbar-brand navbar-brand-white" href="#"><strong>MBIP <i class="bi bi-globe"></i></strong></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- MENU -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/MBIPproject2/Home">Home</a>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Forms
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/MBIPproject2/form/show">Water</a></li>
-              <li><a class="dropdown-item" href="/MBIPproject2/electricForm/">Electric</a></li>
-              <li><a class="dropdown-item" href="/MBIPproject2/Recycle/">Recycle</a></li>
-              <li><a class="dropdown-item" href="/MBIPproject2/transportationForm/">Transportation</a></li>
-            </ul>
-          </li>     
-          </li>
-          <li><a class="nav-link" aria-current="page" href="#">Track Progress</a>
-          </li>
-
-
-        </ul>
-        <div class="d-flex">
-          <a href="/MBIPproject2/" class="btn btn-success">Log Out</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-
-  <!-- Modal CONTATO-->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Contato</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="exampleFormControlInput2" class="form-label">Nome</label>
-            <input type="name" class="form-control" id="exampleFormControlInput2" placeholder="Jessica Ferraz">
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-          </div>
-          <div class="mb-3">
-            <label for="inputPhone" class="form-label">Telefone</label>
-            <input type="number" class="form-control" id="inputPhone" placeholder="(__)________">
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Mensagem</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-              placeholder="Escreva sua mensagem."></textarea>
-          </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-          <button type="button" class="btn btn-primary">Enviar</button>
-        </div>
-      </div>
-    </div>
-  </div>
+ <jsp:include page="header.jsp" />
+  
 
 
 
@@ -117,10 +48,9 @@
       <!-- vai ocupar todo o espaço se a tela for pequena -->
       <!-- col-lg-6 para telas grandes -->
       <div class="col-12 col-lg-6">
-        <h1 class="text-center pt-5 mt-4">WELCOME TO MBIP LOW CARBON MONITORING SYSTEM!</h1>
+        <h1 class="text-center pt-5 mt-4 welcome-brand-white">WELCOME TO MBIP LOW CARBON MONITORING SYSTEM!</h1>
         <div class="text-center text-md-center">
-          <button type="button" class="btn btn-outline-success mt-2 ms-4" style="font-size: 2rem;">button
-          </button>
+          <a href="/MBIPproject2/form/show" type="button" class="btn btn-outline-success mt-2 ms-4" style="font-size: 2rem;" >Get Started!</a>
 
         </div>
 
@@ -217,11 +147,7 @@
       <div class="row">
         <div class="offset-lg-2 col-lg-8 col-md-12 col-12">
           <div class="text-center px-lg-18 mb-8">
-            <p class="text-sucess"><strong><i class="bi bi-airplane"></i></strong> Viajar é Preciso <i
-                class="bi bi-globe"></i></strong></p>
-            <p class="mb-0">
-              Viajar é preciso sempre! Deixe que a gente cuide desses momentos únicos para você.
-            </p>
+            
             <div class="mt-4">
               <a href="0" class="text-inherit text-success me-3" target="_blank" title="WhatsApp"><i
                   class="bi bi-whatsapp"></i></a>
@@ -242,91 +168,20 @@
 
 
   <footer class="mt-3 text-center bg-body-tertiary">
-    <h2 style="font-size: 1rem;">Referências</h2>
+    <h2 style="font-size: 1rem;">Contact</h2>
     <ul style="list-style-type: none;">
-      <li style="font-size: 0.9rem;">Imagem de <a
-          href="https://pixabay.com/pt/users/pamjpat-6320763/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2714675"
-          target="_blank" style="text-decoration: none;">Pam Patterson</a> por <a
-          href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2714675"
-          target="_blank" style="text-decoration: none;">Pixabay</a>
-      </li>
 
-      <li style="font-size: 0.9rem;">Baseado em: <a href="https://www.youtube.com/watch?v=_TyXLKNvk1Y" target="_blank"
-          style="text-decoration: none;">Construindo um site completo com Bootstrap 5</a> por Diego Mariano</li>
+      <li style="font-size: 0.9rem;">Whatsapp Admin: <a href="https://www.youtube.com/watch?v=_TyXLKNvk1Y" target="_blank"
+          style="text-decoration: none;">+6012 345 678</li>
 
-      <li style="font-size: 0.9rem;">Baseado em: <a href="https://themes.getbootstrap.com/preview/?theme_id=61529"
-          target="_blank" style="text-decoration: none;">Tema Geeks</a></li>
-
-      <li style="font-size: 0.9rem;">Baseado em: <a href="https://themes.getbootstrap.com/preview/?theme_id=23273"
-          target="_blank" style="text-decoration: none;">Tema LandKit</a></li>
-
-      <li style="font-size: 0.9rem";>Dark mode de <a href="https://youtu.be/9VDsk-wU_Yo?si=DIjETqE3seR8BlxW" target="_blank" style="text-decoration: none;">Modo Dark e Modo Light por Estudante dev | Escola de Programação</a></li>
-
-      <li style="font-size: 0.9rem;">Imagem de <a
-          href="https://pixabay.com/pt/users/tneto-13097599/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4769367"
-          target="_blank" style="text-decoration: none;">Turiano L P Neto</a> por <a
-          href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4769367"
-          target="_blank" style="text-decoration: none;">Pixabay</a></li>
-
-      <li style="font-size: 0.9rem;">Imagem de <a
-          href="https://pixabay.com/pt/users/12019-12019/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1963744"
-          target="_blank" style="text-decoration: none;">12019</a>
-        por <a
-          href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1963744"
-          target="_blank" style="text-decoration: none;">Pixabay</a>
-      </li>
-
-      <li style="font-size: 0.9rem;">Imagem de <a
-          href="https://pixabay.com/pt/users/babelphotography-155772/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=279013" target="_blank" style="text-decoration: none;">Bela Balla</a> por <a
-          href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=279013"
-          target="_blank" style="text-decoration: none;">Pixabay</a>
-      </li>
-
-      <li style="font-size: 0.9rem;">Imagem de <a
-          href="https://pixabay.com/pt/users/fonthipward-119618/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=261506" target="_blank" style="text-decoration: none;">Fonthip
-        Ward</a> por <a href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=261506"
-          target="_blank" style="text-decoration: none;">Pixabay</a>
-      </li>
-      <li style="font-size: 0.9rem;">Imagem de <a
-          href="https://pixabay.com/pt/users/noel_bauza-2019050/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1197753"
-          target="_blank" style="text-decoration: none;">Noel
-        Bauza</a> por <a
-          href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1197753"
-          target="_blank" style="text-decoration: none;">Pixabay</a>
-      </li>
-      <li style="font-size: 0.9rem;">Imagem de <a
-          href="https://pixabay.com/pt/users/wallula-3205382/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2835995"
-          target="_blank" style="text-decoration: none;">Wallula</a>
-        por <a
-          href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2835995"
-          target="_blank" style="text-decoration: none;">Pixabay</a>
-      </li>
-
-
-      <li style="font-size: 0.9rem;">Imagem de <a
-          href="https://pixabay.com/pt/users/nonmisvegliate-7011191/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3654227"
-          target="_blank" style="text-decoration: none;">Luca</a>
-        por <a
-          href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3654227"
-          target="_blank" style="text-decoration: none;">Pixabay</a>
-      </li>
-
-      <li style="font-size: 0.9rem;">Imagem de <a
-          href="https://pixabay.com/pt/users/cezzare-5062712/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2267089"
-          target="_blank" style="text-decoration: none;">Cesar
-          Salazar</a> por <a
-          href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2267089"
-          target="_blank" style="text-decoration: none;">Pixabay</a>
-      </li>
+      <li style="font-size: 0.9rem;">Email: <a href="https://themes.getbootstrap.com/preview/?theme_id=61529"
+          target="_blank" style="text-decoration: none;">mbip@gmail.com</a></li>
     </ul>
-    <span>&copy; 2023 Desenvolvido por Jéssica Ferraz</span>
+    <span>&copy; 2023 Copyright: MBIP.com</span>
   </footer>
 
 
-  <!-- BOOTSTRAP JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+
 
 
 </html>

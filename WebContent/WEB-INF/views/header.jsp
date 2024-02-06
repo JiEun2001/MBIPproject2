@@ -52,13 +52,13 @@
             </ul>
           </li>     
           </li>
-          <li><a class="nav-link" aria-current="page" href="#">Track Progress</a>
+          <li><a class="nav-link" aria-current="page" href="/MBIPproject2/track">Track Progress</a>
           </li>
 
 
         </ul>
         <div class="d-flex">
-          <a href="/MBIPproject2/Homepage" class="btn btn-success">Log Out</a>
+          <a href="/MBIPproject2/" class="btn btn-success">Log Out</a>
         </div>
       </div>
     </div>

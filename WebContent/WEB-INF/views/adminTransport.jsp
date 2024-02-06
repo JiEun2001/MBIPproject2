@@ -189,7 +189,6 @@ tr:nth-child(even) {
 						<th>Distance Travelled</th>
 						<th>Emission Factor</th>
 						<th>Transportation Carbon</th>>
-						<th>Comments</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -202,7 +201,6 @@ tr:nth-child(even) {
 							<td>${transport.distanceTravelled}</td>
 							<td>${transport.emissionFactor}</td>
 							<td>${transport.transportation_carbon}</td>
-							<td>${transport.comment}</td>
 						</tr>
 					</c:forEach>
 				</tbody>

@@ -389,7 +389,7 @@ public class AdminController {
 			// Get data
 			while (rs.next()) {
 
-				Transportation transport = new Transportation();
+				Transportation transport = new Transportation(0, 0, 0);
 				
 				transport.setUid(rs.getInt("uid"));
 				transport.setVehicle_type(rs.getString("vehicle_type"));

@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Track Progress</title>
 <style>
 @charset "ISO-8859-1";
 
@@ -96,11 +97,11 @@ hr {
 	overflow: hidden;
 	margin-bottom: 20px;
 	background-color: #FFF;
-
+	bs-card-bg: #f00;
 }
 
 .card-header {
-	background-color: #38761d;
+	background-color: #8bc34a;
 	color: #FFF;
 	padding: 10px;
 	text-align: center;
@@ -126,46 +127,21 @@ hr {
 	margin-right: 10px; /* Optional: Add margin between the paragraphs */
 }
 </style>
-<head>
-<meta charset="ISO-8859-1">
-<link href="../../css/admindashboard.css" rel="stylesheet" type="text/css">
-<title>Insert title here</title>
 </head>
 <body>
-<section class="row">
-		<article class="article-left">
-			<ul>
-				<li><i class="fa fa-home" aria-hidden="true"></i><a
-					href="${pageContext.request.contextPath}/admin/">Dashboard</a></li>
-				<li><i class="fa fa-user-o" aria-hidden="true"></i><a
-					href="${pageContext.request.contextPath}/admin/userAll">User Management</a></li>
-				<hr>
-				<li><i class="fa fa-rocket" aria-hidden="true"></i> <a
-					href="${pageContext.request.contextPath}/admin/electric">Electric
-						Consumption</a></li>
-				<li><i class="fa fa-rocket" aria-hidden="true"></i> <a
-					href="${pageContext.request.contextPath}/admin/water">Water
-						Consumption</a></li>
-				<li><i class="fa fa-rocket" aria-hidden="true"></i> <a
-					href="${pageContext.request.contextPath}/admin/recycle">Recyle Activity</a></li>
-				<li><i class="fa fa-rocket" aria-hidden="true"></i> <a
-					href="${pageContext.request.contextPath}/admin/transport">Transportation
-						Management</a></li>
-				<hr>
-				<li><i class="fa fa-sign-out" aria-hidden="true"></i><a
-					href="${pageContext.request.contextPath}/admin/logout">Log Out</a></li>
-			</ul>
-		</article>
-		<article class="article-right">
+<jsp:include page="header.jsp" />
+
+	<article class="article-right">
 			<h1>Dashboard</h1>
 			<hr>
 			<div class="card">
 				<div class="card-header">
-					<h3>Total Participants</h3>
+					<h3>Participants Information</h3>
 				</div>
 				<div class="card-body" style="text-align: center;">
 					<!-- Use JSTL to get the total count directly from the list -->
-					<p>Total participants: ${userTotal}</p>
+					<p>Name: ${name}</p>
+					<p>Address: ${address}</p>
 				</div>
 			</div>
 
@@ -183,6 +159,5 @@ hr {
 				</div>
 			</div>
 		</article>
-	</section>
 </body>
 </html>

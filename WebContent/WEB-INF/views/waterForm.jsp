@@ -199,9 +199,19 @@
         }
         
         .next-button {
-		  padding: 10px 20px; /* Adjust the size */
-		  margin-right: auto; /* Aligns to the left in a flex container */
-		  display: block; /* Makes it easier to apply margins */
+		  padding: 10px 20px; 
+		  display: block;
+		  width: 70%;
+    	  color: #fff;
+          text-align: center;
+          white-space: nowrap;
+          border-radius: 5px;
+          background-color: #8bc34a;
+          margin-top: 8px;
+          justify-content: center;
+          align-items: left;
+          padding: 12px 60px;
+          font: 400 20px Libre Franklin, sans-serif; /* Makes it easier to apply margins */
 		}
         
     </style>
@@ -224,7 +234,7 @@
                     </div>
                     <input type="text" class="textInput" id="outdoorWaterUsage" name="outdoorWaterUsage">
                     <div class="div-9">
-                        <input type="submit" value="Next" class="div-10 next-button"> <!-- Submit button -->
+                        <input type="submit" value="Next" class="next-button " style="width: 70%;"> <!-- Submit button -->
                         <!-- Removed Log-in and Cancel buttons for simplicity -->
                     </div>
                 </div>

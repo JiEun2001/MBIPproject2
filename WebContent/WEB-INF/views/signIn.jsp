@@ -23,7 +23,7 @@
           class="img-fluid" alt="Sample image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form action="/MBIPproject2/account/authenticate" method="post">
+        <form action="/MBIPproject2/authenticate" method="post">
          
           <p class="text-center mt-3">Low Carbon Monitoring System</p>
           <p class="text-center mt-3">Your go-to tool for tracking carbon emissions in Iskandar Puteri.</p>

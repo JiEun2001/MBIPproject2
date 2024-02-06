@@ -49,36 +49,46 @@ public class AuthController {
 
 			Connection conn = DriverManager.getConnection(dbURL, dbusername, dbpassword);
 			System.out.println("connection successfully opened :" + conn.getMetaData());
+			
+			if(email.equals("admin@gmail.com")) {
+				// check email if admin
+				
 
-			 // Creating JDBC Statement
-	        String sql = "SELECT * FROM user WHERE email = ? AND password = ?";
-	        PreparedStatement stnt = conn.prepareStatement(sql);
-	        stnt.setString(1, email);
-	        stnt.setString(2,password);
+	        	modelAndView.setViewName("redirect:/admin/");
+			}else {
+				// check email if user
+				
+				 // Creating JDBC Statement
+		        String sql = "SELECT * FROM user WHERE email = ? AND password = ?";
+		        PreparedStatement stnt = conn.prepareStatement(sql);
+		        stnt.setString(1, email);
+		        stnt.setString(2,password);
 
-	        //execute query
-	        ResultSet rs = stnt.executeQuery();
-	        
-	        //if exist
-	        if(rs.next()) {
-	        	//success
-	        	
-	        	int uid = rs.getInt("uid");
-	        	String name= rs.getString("username");
-	        	session.setAttribute("uid",uid);
-	        	session.setAttribute("name", name);
-	        	
-//	        	modelAndView.setViewName("/userHomepage");
-	        	modelAndView.setViewName("redirect:/user/");
-	        }else {
-	        	//failed
-	        	
-	        	
-	        }
-	        
-	        
-			// close
-			conn.close();
+		        //execute query
+		        ResultSet rs = stnt.executeQuery();
+		        
+		        //if exist
+		        if(rs.next()) {
+		        	//success
+		        	
+		        	int uid = rs.getInt("uid");
+		        	String name= rs.getString("username");
+		        	session.setAttribute("uid",uid);
+		        	session.setAttribute("name", name);
+		        	
+//		        	modelAndView.setViewName("/userHomepage");
+		        	modelAndView.setViewName("redirect:/user/");
+		        }else {
+		        	//failed
+		        	
+		        	
+		        }
+		      
+				// close
+				conn.close();
+				
+			}
+
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 		} catch (ClassNotFoundException ex) {
@@ -149,7 +159,7 @@ public class AuthController {
 	            
 	            stmt.executeUpdate();
 	      
-	            modelAndView = new ModelAndView("redirect:/account/"); // redirect to login page
+	            modelAndView = new ModelAndView("redirect:/"); // redirect to login page
 			}else {
 				modelAndView.setViewName("/signUp");
 			    modelAndView.addObject("error", "Registration failed. Please try again.");

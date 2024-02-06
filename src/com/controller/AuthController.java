@@ -24,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
 import model.user;
 
 @Controller
+@RequestMapping("/account")
 public class AuthController {
 
 	@GetMapping("/")

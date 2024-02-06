@@ -39,7 +39,7 @@
 
 								<%-- Display error message if it exists --%>
 
-								<form action="/MBIPproject2/register" method="post">
+								<form action="/MBIPproject2/account/register" method="post">
 									<c:if test="${not empty error}">
 										<div class="alert alert-danger" role="alert">${error}</div>
 									</c:if>

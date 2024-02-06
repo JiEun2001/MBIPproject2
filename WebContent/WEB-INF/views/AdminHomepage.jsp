@@ -135,9 +135,9 @@ hr {
 		<article class="article-left">
 			<ul>
 				<li><i class="fa fa-home" aria-hidden="true"></i><a
-					href="admin/">Dashboard</a></li>
+					href="${pageContext.request.contextPath}/admin/">Dashboard</a></li>
 				<li><i class="fa fa-user-o" aria-hidden="true"></i><a
-					href="/mbip_project/admin/getallparticipants">User Management</a></li>
+					href="${pageContext.request.contextPath}/admin/userAll">User Management</a></li>
 				<hr>
 				<li><i class="fa fa-rocket" aria-hidden="true"></i> <a
 					href="/mbip_project/admin/showElectricSubmission">Electric
@@ -151,7 +151,7 @@ hr {
 					href="/mbip_project/admin/getallwasteactivity">Transportation Management</a></li>
 				<hr>
 				<li><i class="fa fa-sign-out" aria-hidden="true"></i><a
-					href="/mbip_project/logout">Log Out</a></li>
+					href="${pageContext.request.contextPath}/admin/logout">Log Out</a></li>
 			</ul>
 		</article>
 		<article class="article-right">
@@ -182,7 +182,5 @@ hr {
 			</div>
 		</article>
 	</section>
-<!-- Add a logout link -->
-<a href="${pageContext.request.contextPath}/user/logout">Logout</a>
 </body>
 </html>

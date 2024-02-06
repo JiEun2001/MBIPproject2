@@ -6,6 +6,7 @@ public class recycle {
 	private String reItem;
 	private int reTotalItem;
 	private double reWeight;
+	private double reco;
 	public int getReid() {
 		return reid;
 	}
@@ -35,6 +36,12 @@ public class recycle {
 	}
 	public void setReWeight(double reWeight) {
 		this.reWeight = reWeight;
+	}
+	public double getReco() {
+		return reco;
+	}
+	public void setReco(double reco) {
+		this.reco = reco;
 	}
 	
 	

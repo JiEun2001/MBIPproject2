@@ -126,26 +126,29 @@ hr {
 }
 
 table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+th {
+	background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
 </style>
 <head>
 <meta charset="ISO-8859-1">
 <link href="../../css/admindashboard.css" rel="stylesheet"
 	type="text/css">
-<title>User management</title>
+<title>Recycle Consumption</title>
 </head>
 <body>
 	<section class="row">
@@ -154,7 +157,8 @@ table {
 				<li><i class="fa fa-home" aria-hidden="true"></i><a
 					href="${pageContext.request.contextPath}/admin/">Dashboard</a></li>
 				<li><i class="fa fa-user-o" aria-hidden="true"></i><a
-					href="${pageContext.request.contextPath}/admin/userAll">User Management</a></li>
+					href="${pageContext.request.contextPath}/admin/userAll">User
+						Management</a></li>
 				<hr>
 				<li><i class="fa fa-rocket" aria-hidden="true"></i> <a
 					href="${pageContext.request.contextPath}/admin/electric">Electric
@@ -163,7 +167,8 @@ table {
 					href="${pageContext.request.contextPath}/admin/water">Water
 						Consumption</a></li>
 				<li><i class="fa fa-rocket" aria-hidden="true"></i> <a
-					href="${pageContext.request.contextPath}/admin/recycle">Recyle Activity</a></li>
+					href="${pageContext.request.contextPath}/admin/recycle">Recycle
+						Activity</a></li>
 				<li><i class="fa fa-rocket" aria-hidden="true"></i> <a
 					href="${pageContext.request.contextPath}/admin/transport">Transportation
 						Management</a></li>
@@ -173,27 +178,29 @@ table {
 			</ul>
 		</article>
 		<article class="article-right">
-			<h1>User management</h1>
+			<h1>Recycle Carbon</h1>
 			<hr>
 			<table>
 				<thead>
 					<tr>
+						<th>Form ID</th>
 						<th>User ID</th>
-						<th>Username</th>
-						<th>Email</th>
-						<th>Address</th>
-						<th>Phone</th>
+						<th>Recycle Item</th>
+						<th>Recycle Total Item</th>
+						<th>Recycle Weight</th>
+						<th>Recycle Consumption</th>
 					</tr>
 				</thead>
 				<tbody>
 					<!-- Iterate over the user list provided by the controller -->
-					<c:forEach var="user" items="${users}">
+					<c:forEach var="recycle" items="${recycles}">
 						<tr>
-							<td>${user.uid}</td>
-							<td>${user.username}</td>
-							<td>${user.email}</td>
-							<td>${user.address}</td>
-							<td>${user.phone}</td>
+							<td>${recycle.reid}</td>
+							<td>${recycle.uid}</td>
+							<td>${recycle.reItem}</td>
+							<td>${recycle.reTotalItem}</td>
+							<td>${recycle.reWeight}</td>
+							<td>${recycle.reco}</td>
 						</tr>
 					</c:forEach>
 				</tbody>

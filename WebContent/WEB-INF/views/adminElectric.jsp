@@ -173,7 +173,7 @@ table {
 			</ul>
 		</article>
 		<article class="article-right">
-			<h1>User management</h1>
+			<h1>Electric carbon</h1>
 			<hr>
 			<table>
 				<thead>

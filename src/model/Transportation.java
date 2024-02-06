@@ -1,19 +1,14 @@
 package model;
 
 public class Transportation {
+	private int uid;
+	private String vehicle_type;
+	private double transportation_carbon;
+	private String comment;
     private double fuelConsumed;  // in liters
     private double distanceTravelled;  // in kilometers
     private double emissionFactor;  // carbon emission factor per liter
 
-    // Constructors, getters, and setters
-    public Transportation() {
-    }
-
-    public Transportation(double fuelConsumed, double distanceTravelled, double emissionFactor) {
-        this.fuelConsumed = fuelConsumed;
-        this.distanceTravelled = distanceTravelled;
-        this.emissionFactor = emissionFactor;
-    }
 
     public double getFuelConsumed() {
         return fuelConsumed;
@@ -52,4 +47,36 @@ public class Transportation {
                 ", emissionFactor=" + emissionFactor +
                 '}';
     }
+
+	public int getUid() {
+		return uid;
+	}
+
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
+
+	public String getVehicle_type() {
+		return vehicle_type;
+	}
+
+	public void setVehicle_type(String vehicle_type) {
+		this.vehicle_type = vehicle_type;
+	}
+
+	public double getTransportation_carbon() {
+		return transportation_carbon;
+	}
+
+	public void setTransportation_carbon(double transportation_carbon) {
+		this.transportation_carbon = transportation_carbon;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
 }

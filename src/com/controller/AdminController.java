@@ -17,7 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import model.Electric;
-import model.Trainee;
+import model.Transportation;
+import model.recycle;
 import model.WaterUsage;
 import model.user;
 
@@ -312,6 +313,109 @@ public class AdminController {
 
 		ModelAndView modelAndView = new ModelAndView("/adminWater");
 		modelAndView.addObject("waters", waters);
+		return modelAndView;
+	}
+	
+	@GetMapping("/recycle")
+	public ModelAndView recycle() {
+		String dbURL = "jdbc:mysql://localhost:3306/mbip";
+		String dbusername = "root";
+		String dbpassword = "";
+		List<recycle> recycles= new ArrayList<>();
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(dbURL, dbusername, dbpassword);
+			System.out.println("connection successfully opened :" + conn.getMetaData());
+
+			// creating JDBC Statement
+			String sql = "Select * from recycle_activity";
+			Statement stnt = conn.createStatement();
+
+			// Execute query
+			ResultSet rs = stnt.executeQuery(sql);
+
+			// Get data
+			while (rs.next()) {
+
+				recycle recycle = new recycle();
+				recycle.setReid(rs.getInt("reid"));
+				recycle.setUid(rs.getInt("uid"));
+				recycle.setReItem(rs.getString("reItem"));
+				recycle.setReTotalItem(rs.getInt("reTotalItem"));
+				recycle.setReWeight(rs.getDouble("reWeight"));
+				recycle.setReco(rs.getDouble("reco"));
+
+				recycles.add(recycle);
+
+				// Print each row from ResultSet (for debugging)
+				System.out.println("Row Data: " + recycle);
+
+			}
+
+			// close
+			conn.close();
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		} catch (ClassNotFoundException ex) {
+			ex.printStackTrace();
+		}
+
+		ModelAndView modelAndView = new ModelAndView("/adminRecycle");
+		modelAndView.addObject("recycles", recycles);
+		return modelAndView;
+	}
+	
+	
+	@GetMapping("/transport")
+	public ModelAndView transport() {
+		String dbURL = "jdbc:mysql://localhost:3306/mbip";
+		String dbusername = "root";
+		String dbpassword = "";
+		List<Transportation> transports= new ArrayList<>();
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(dbURL, dbusername, dbpassword);
+			System.out.println("connection successfully opened :" + conn.getMetaData());
+
+			// creating JDBC Statement
+			String sql = "Select * from transportation";
+			Statement stnt = conn.createStatement();
+
+			// Execute query
+			ResultSet rs = stnt.executeQuery(sql);
+
+			// Get data
+			while (rs.next()) {
+
+				Transportation transport = new Transportation();
+				
+				transport.setUid(rs.getInt("uid"));
+				transport.setVehicle_type(rs.getString("vehicle_type"));
+				transport.setTransportation_carbon(rs.getDouble("transportation_carbon"));
+				transport.setComment(rs.getString("comment"));
+				transport.setFuelConsumed(rs.getDouble("fuel_consumed"));
+				transport.setDistanceTravelled(rs.getDouble("distance_travelled"));
+				transport.setEmissionFactor(rs.getDouble("emission_factor"));
+
+				transports.add(transport);
+
+				// Print each row from ResultSet (for debugging)
+				System.out.println("Row Data: " + transports);
+
+			}
+
+			// close
+			conn.close();
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		} catch (ClassNotFoundException ex) {
+			ex.printStackTrace();
+		}
+
+		ModelAndView modelAndView = new ModelAndView("/adminTransport");
+		modelAndView.addObject("transports", transports);
 		return modelAndView;
 	}
 }

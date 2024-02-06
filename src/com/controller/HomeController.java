@@ -11,6 +11,12 @@ public class HomeController {
         return "/Homepage"; // Redirect to the form page or a home page
     }
     
+    @GetMapping("/Home")
+    public String home2() {
+        return "/Home"; // Redirect to the form page or a home page
+    }
+    
+    
     @GetMapping("/MBIPproject2/WebContent/images/homepage.png")
     public String homepage() {
         return "/images/homepage.png"; // Redirect to the form page or a home page

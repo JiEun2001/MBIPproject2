@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Water Consumption</title>
     <style>
         .div {
@@ -206,6 +207,8 @@
     </style>
 </head>
 <body>
+<jsp:include page="header.jsp" />
+
      <div class="div">
         <div class="div-2">
             <div class="div-3">Water Consumption</div>

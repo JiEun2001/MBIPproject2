@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import model.Electric;
 import model.Trainee;
+import model.WaterUsage;
 import model.user;
 
 @Controller
@@ -108,7 +109,7 @@ public class AdminController {
 		}
 		///////////////////////////////
 		try {
-			// get transportation
+			// get Recycle
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
 			Connection conn = DriverManager.getConnection(dbURL, dbusername, dbpassword);
@@ -133,7 +134,7 @@ public class AdminController {
 		}
 		///////////////////////////////
 		try {
-			//get transportation
+			//get Water
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
 			Connection conn = DriverManager.getConnection(dbURL, dbusername, dbpassword);
@@ -263,6 +264,54 @@ public class AdminController {
 
 		ModelAndView modelAndView = new ModelAndView("/adminElectric");
 		modelAndView.addObject("electrics", electrics);
+		return modelAndView;
+	}
+	
+	@GetMapping("/water")
+	public ModelAndView water() {
+		String dbURL = "jdbc:mysql://localhost:3306/mbip";
+		String dbusername = "root";
+		String dbpassword = "";
+		List<WaterUsage> waters = new ArrayList<>();
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(dbURL, dbusername, dbpassword);
+			System.out.println("connection successfully opened :" + conn.getMetaData());
+
+			// creating JDBC Statement
+			String sql = "Select * from water";
+			Statement stnt = conn.createStatement();
+
+			// Execute query
+			ResultSet rs = stnt.executeQuery(sql);
+
+			// Get data
+			while (rs.next()) {
+
+				WaterUsage water = new WaterUsage();
+				water.setUid(rs.getString("uid"));
+				water.setHouseholdWaterUsage(rs.getFloat("household"));
+				water.setOutdoorWaterUsage(rs.getFloat("outdoor"));
+				water.setCF(rs.getDouble("CF"));
+
+				waters.add(water);
+
+				// Print each row from ResultSet (for debugging)
+				System.out.println("Row Data: " + water);
+
+			}
+
+			// close
+			conn.close();
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		} catch (ClassNotFoundException ex) {
+			ex.printStackTrace();
+		}
+
+		ModelAndView modelAndView = new ModelAndView("/adminWater");
+		modelAndView.addObject("waters", waters);
 		return modelAndView;
 	}
 }

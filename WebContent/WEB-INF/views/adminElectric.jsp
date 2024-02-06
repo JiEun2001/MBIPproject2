@@ -163,7 +163,7 @@ table {
 					href="${pageContext.request.contextPath}/admin/water">Water
 						Consumption</a></li>
 				<li><i class="fa fa-rocket" aria-hidden="true"></i> <a
-					href="${pageContext.request.contextPath}/admin/recycle">Recyle Activity</a></li>
+					href="${pageContext.request.contextPath}/admin/recycle">Recycle Activity</a></li>
 				<li><i class="fa fa-rocket" aria-hidden="true"></i> <a
 					href="${pageContext.request.contextPath}/admin/transport">Transportation
 						Management</a></li>

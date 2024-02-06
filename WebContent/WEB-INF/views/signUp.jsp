@@ -38,10 +38,10 @@
 									password!</p>
 
 								<%-- Display error message if it exists --%>
-								<c:if test="${not empty error}">
-									<div class="alert alert-danger" role="alert">${error}</div>
-								</c:if>
-								<form action="/MBIPproject2/account/register" method="post">
+								 <c:if test="${not empty error}">
+                                    <div class="alert alert-danger" role="alert">${error}</div>
+                                </c:if>
+								<form action="/MBIPproject2/register" method="post">
 
 									<div class="form-outline form-dark mb-4">
 										<input type="email" id="typeEmailX"

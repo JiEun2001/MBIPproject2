@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    
+	pageEncoding="ISO-8859-1"%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -124,14 +124,31 @@ hr {
 .card-body p {
 	margin-right: 10px; /* Optional: Add margin between the paragraphs */
 }
+
+table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
 </style>
 <head>
 <meta charset="ISO-8859-1">
-<link href="../../css/admindashboard.css" rel="stylesheet" type="text/css">
-<title>Insert title here</title>
+<link href="../../css/admindashboard.css" rel="stylesheet"
+	type="text/css">
+<title>User management</title>
 </head>
 <body>
-<section class="row">
+	<section class="row">
 		<article class="article-left">
 			<ul>
 				<li><i class="fa fa-home" aria-hidden="true"></i><a
@@ -156,31 +173,31 @@ hr {
 			</ul>
 		</article>
 		<article class="article-right">
-			<h1>Dashboard</h1>
+			<h1>User management</h1>
 			<hr>
-			<div class="card">
-				<div class="card-header">
-					<h3>Total Participants</h3>
-				</div>
-				<div class="card-body" style="text-align: center;">
-					<!-- Use JSTL to get the total count directly from the list -->
-					<p>Total participants: ${userTotal}</p>
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card-header" >
-					<h3>Total Carbon</h3>
-				</div>
-				<div class="card-body" >
-					<div class="side-by-side">
-						<p class="carbon-footprint">Electric Carbon Footprint: ${electricTotal} kgCO2</p>
-						<p class="carbon-footprint">Water Carbon Footprint: ${waterTotal} kgCO2</p>
-						<p class="carbon-footprint">Recycle Carbon Footprint: ${recyTotal} kgCO2</p>
-						<p class="carbon-footprint">Trasnportation Carbon Footprint: ${transTotal} kgCO2</p>
-					</div>
-				</div>
-			</div>
+			<table>
+				<thead>
+					<tr>
+						<th>User ID</th>
+						<th>Username</th>
+						<th>Email</th>
+						<th>Address</th>
+						<th>Phone</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- Iterate over the user list provided by the controller -->
+					<c:forEach var="user" items="${users}">
+						<tr>
+							<td>${user.uid}</td>
+							<td>${user.username}</td>
+							<td>${user.email}</td>
+							<td>${user.address}</td>
+							<td>${user.phone}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
 		</article>
 	</section>
 </body>

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import model.Electric;
 import model.Trainee;
 import model.user;
 
@@ -188,6 +189,57 @@ public class AdminController {
 		
 		ModelAndView modelAndView = new ModelAndView("/adminUserManage");
 		modelAndView.addObject("users", users);
+		return modelAndView;
+	}
+	
+	@GetMapping("/electric")
+	public ModelAndView electric() {
+		String dbURL = "jdbc:mysql://localhost:3306/mbip";
+		String dbusername = "root";
+		String dbpassword = "";
+		List <Electric> electrics = new ArrayList<>();
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(dbURL, dbusername, dbpassword);
+			System.out.println("connection successfully opened :" + conn.getMetaData());
+
+			// creating JDBC Statement
+			String sql = "Select * from electric_consumption";
+			Statement stnt = conn.createStatement();
+
+			// Execute query
+			ResultSet rs = stnt.executeQuery(sql);
+
+			// Get data
+			while (rs.next()) {
+
+
+			    Electric electric = new Electric();
+			    electric.setFid(rs.getInt("fid"));
+			    electric.setUid(rs.getInt("uid"));
+			    electric.setDate(rs.getString("date"));
+			    electric.setMeterReading(rs.getInt("meter_reading"));
+			    electric.setCommants(rs.getString("comments"));
+			    electric.setElco(rs.getDouble("elco"));
+			    
+			    electrics.add(electric);
+			    
+			    // Print each row from ResultSet (for debugging)
+			    System.out.println("Row Data: " + electric);
+
+			}
+
+			// close
+			conn.close();
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		} catch (ClassNotFoundException ex) {
+			ex.printStackTrace();
+		}
+		
+		ModelAndView modelAndView = new ModelAndView("/adminElectric");
+		modelAndView.addObject("electrics", electrics);
 		return modelAndView;
 	}
 }

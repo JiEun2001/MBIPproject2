@@ -24,7 +24,6 @@ import org.springframework.web.servlet.ModelAndView;
 import model.user;
 
 @Controller
-@RequestMapping("/account")
 public class AuthController {
 
 	@GetMapping("/")
@@ -50,32 +49,38 @@ public class AuthController {
 
 			Connection conn = DriverManager.getConnection(dbURL, dbusername, dbpassword);
 			System.out.println("connection successfully opened :" + conn.getMetaData());
+			if(email.equals("admin@gmail.com")) {
+				// check email if admin
+				modelAndView.setViewName("redirect:/admin/");
+			}else {
+				 // Creating JDBC Statement
+		        String sql = "SELECT * FROM user WHERE email = ? AND password = ?";
+		        PreparedStatement stnt = conn.prepareStatement(sql);
+		        stnt.setString(1, email);
+		        stnt.setString(2,password);
 
-			 // Creating JDBC Statement
-	        String sql = "SELECT * FROM user WHERE email = ? AND password = ?";
-	        PreparedStatement stnt = conn.prepareStatement(sql);
-	        stnt.setString(1, email);
-	        stnt.setString(2,password);
-
-	        //execute query
-	        ResultSet rs = stnt.executeQuery();
-	        
-	        //if exist
-	        if(rs.next()) {
-	        	//success
-	        	
-	        	int uid = rs.getInt("uid");
-	        	String name= rs.getString("username");
-	        	session.setAttribute("uid",uid);
-	        	session.setAttribute("name", name);
-	        	
-//	        	modelAndView.setViewName("/userHomepage");
-	        	modelAndView.setViewName("redirect:/user/");
-	        }else {
-	        	//failed
-	        	
-	        	
-	        }
+		        //execute query
+		        ResultSet rs = stnt.executeQuery();
+		        
+		        //if exist
+		        if(rs.next()) {
+		        	//success
+		        	
+		        	int uid = rs.getInt("uid");
+		        	String name= rs.getString("username");
+		        	session.setAttribute("uid",uid);
+		        	session.setAttribute("name", name);
+		        	
+//		        	modelAndView.setViewName("/userHomepage");
+		        	modelAndView.setViewName("redirect:/user/");
+		        }else {
+		        	//failed
+		        	modelAndView.addObject("error", "Invalid email or password. Please try again.");
+					modelAndView.setViewName("/signIn");
+		        	
+		        }
+			}
+			
 	        
 	        
 			// close
@@ -153,7 +158,7 @@ public class AuthController {
 	            modelAndView = new ModelAndView("redirect:/account/"); // redirect to login page
 			}else {
 				modelAndView.setViewName("/signUp");
-			    modelAndView.addObject("error", "Registration failed. Please try again.");
+				modelAndView.addObject("error", "Invalid email or password. Please try again.");
 			}
 			// close
 			conn.close();

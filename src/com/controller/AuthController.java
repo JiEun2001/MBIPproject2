@@ -80,7 +80,8 @@ public class AuthController {
 		        	modelAndView.setViewName("redirect:/user/");
 		        }else {
 		        	//failed
-		        	
+		        	modelAndView.addObject("error", "Invalid email or password. Please try again.");
+					modelAndView.setViewName("/signIn");
 		        	
 		        }
 		      
@@ -161,8 +162,9 @@ public class AuthController {
 	      
 	            modelAndView = new ModelAndView("redirect:/"); // redirect to login page
 			}else {
+				modelAndView.addObject("error", "Invalid email or password. Please try again.");
+
 				modelAndView.setViewName("/signUp");
-			    modelAndView.addObject("error", "Registration failed. Please try again.");
 			}
 			// close
 			conn.close();

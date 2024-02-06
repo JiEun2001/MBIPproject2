@@ -157,15 +157,15 @@ table {
 					href="${pageContext.request.contextPath}/admin/userAll">User Management</a></li>
 				<hr>
 				<li><i class="fa fa-rocket" aria-hidden="true"></i> <a
-					href="/mbip_project/admin/showElectricSubmission">Electric
+					href="${pageContext.request.contextPath}/admin/electric">Electric
 						Consumption</a></li>
 				<li><i class="fa fa-rocket" aria-hidden="true"></i> <a
-					href="/mbip_project/admin/showWaterSubmission">Water
+					href="${pageContext.request.contextPath}/admin/water">Water
 						Consumption</a></li>
 				<li><i class="fa fa-rocket" aria-hidden="true"></i> <a
-					href="/mbip_project/admin/getallwasteactivity">Recyle Activity</a></li>
+					href="${pageContext.request.contextPath}/admin/recycle">Recycle Activity</a></li>
 				<li><i class="fa fa-rocket" aria-hidden="true"></i> <a
-					href="/mbip_project/admin/getallwasteactivity">Transportation
+					href="${pageContext.request.contextPath}/admin/transport">Transportation
 						Management</a></li>
 				<hr>
 				<li><i class="fa fa-sign-out" aria-hidden="true"></i><a

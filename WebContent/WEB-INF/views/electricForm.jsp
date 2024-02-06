@@ -210,6 +210,7 @@
                 <input type="date" id="date" class="textInput" name="date" placeholder="Current Date">
                 
                 <div class="div-7">
+                	<p style="text-align: left; float: left">Kwh Amount</p>
                 </div>
                 <input type="number" id="meterReading" class="textInput" name="meterReading" placeholder="Kwh Amount" >
                 

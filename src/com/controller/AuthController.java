@@ -49,15 +49,10 @@ public class AuthController {
 
 			Connection conn = DriverManager.getConnection(dbURL, dbusername, dbpassword);
 			System.out.println("connection successfully opened :" + conn.getMetaData());
-			
 			if(email.equals("admin@gmail.com")) {
 				// check email if admin
-				
-
-	        	modelAndView.setViewName("redirect:/admin/");
+				modelAndView.setViewName("redirect:/admin/");
 			}else {
-				// check email if user
-				
 				 // Creating JDBC Statement
 		        String sql = "SELECT * FROM user WHERE email = ? AND password = ?";
 		        PreparedStatement stnt = conn.prepareStatement(sql);
@@ -84,12 +79,12 @@ public class AuthController {
 					modelAndView.setViewName("/signIn");
 		        	
 		        }
-		      
-				// close
-				conn.close();
-				
 			}
-
+			
+	        
+	        
+			// close
+			conn.close();
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 		} catch (ClassNotFoundException ex) {
@@ -160,11 +155,10 @@ public class AuthController {
 	            
 	            stmt.executeUpdate();
 	      
-	            modelAndView = new ModelAndView("redirect:/"); // redirect to login page
+	            modelAndView = new ModelAndView("redirect:/account/"); // redirect to login page
 			}else {
-				modelAndView.addObject("error", "Invalid email or password. Please try again.");
-
 				modelAndView.setViewName("/signUp");
+				modelAndView.addObject("error", "Invalid email or password. Please try again.");
 			}
 			// close
 			conn.close();

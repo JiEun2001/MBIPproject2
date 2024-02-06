@@ -38,11 +38,11 @@
 									password!</p>
 
 								<%-- Display error message if it exists --%>
-								 <c:if test="${not empty error}">
-                                    <div class="alert alert-danger" role="alert">${error}</div>
-                                </c:if>
-								<form action="/MBIPproject2/register" method="post">
 
+								<form action="/MBIPproject2/register" method="post">
+									<c:if test="${not empty error}">
+										<div class="alert alert-danger" role="alert">${error}</div>
+									</c:if>
 									<div class="form-outline form-dark mb-4">
 										<input type="email" id="typeEmailX"
 											class="form-control form-control-lg" name="email" /> <label
@@ -84,7 +84,9 @@
 
 									<button class="btn btn-outline-dark btn-lg px-5" type="submit">Register</button>
 									<p class="small fw-bold mt-2 pt-1 mb-0">
-										Already have an account? <a href="${pageContext.request.contextPath}/" class="link-danger">Sign In!</a>
+										Already have an account? <a
+											href="${pageContext.request.contextPath}/"
+											class="link-danger">Sign In!</a>
 									</p>
 								</form>
 							</div>

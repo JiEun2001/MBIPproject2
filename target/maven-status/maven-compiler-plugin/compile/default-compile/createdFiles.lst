@@ -1,1 +1,12 @@
-com\controller\LoginController.class
+com\config\WebConfig.class
+com\controller\FormServlet.class
+com\observer\SummaryReportGenerator.class
+com\controller\UserHomepageController.class
+com\observer\SessionTracking.class
+com\controller\FormController.class
+com\controller\HomeController.class
+com\controller\FormObserver.class
+db\util\DBconnect.class
+model\user.class
+model\WaterUsage.class
+com\controller\AuthController.class

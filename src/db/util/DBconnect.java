@@ -32,13 +32,18 @@ public class DBconnect {
 	}
 
 	public void saveWaterUsage(WaterUsage waterUsage) {
-        String sql = "INSERT INTO water (household, outdoor) VALUES (?, ?)";
+        String sql = "INSERT INTO water (uid, household, outdoor, CF) VALUES (?, ?, ?, ?)";
         
         try (Connection conn = openConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
+        	
+        	double CarbonFootprint = (waterUsage.getHouseholdWaterUsage() + waterUsage.getOutdoorWaterUsage()) * 0.419;
 
-            stmt.setFloat(1, waterUsage.getHouseholdWaterUsage());
-            stmt.setFloat(2, waterUsage.getOutdoorWaterUsage());
+        	stmt.setString(1, waterUsage.getUid());
+            stmt.setFloat(2, waterUsage.getHouseholdWaterUsage());
+            stmt.setFloat(3, waterUsage.getOutdoorWaterUsage());
+            stmt.setDouble(4, CarbonFootprint);
+            
 
             stmt.executeUpdate();
         } catch (SQLException e) {

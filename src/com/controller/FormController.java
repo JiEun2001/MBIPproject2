@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,10 +41,10 @@ public class FormController {
     
 
     @PostMapping("/submit")
-    public String handleFormSubmission(@ModelAttribute WaterUsage waterUsage, HttpServletRequest request) {
+    public String handleFormSubmission(@ModelAttribute WaterUsage waterUsage, HttpServletRequest request, HttpSession session) {
         //String formData = request.getParameter("formData"); // replace with actual form data
         //observers.forEach(observer -> observer.update(waterUsage));
-
+    	//waterUsage.setUid((String) session.getAttribute("UID"));
         dbconnect.saveWaterUsage(waterUsage);
 
         return "redirect:/Homepage"; // Redirect to a success page or similar

@@ -196,6 +196,13 @@
                 padding: 0 20px;
             }
         }
+        
+        .next-button {
+		  padding: 10px 20px; /* Adjust the size */
+		  margin-right: auto; /* Aligns to the left in a flex container */
+		  display: block; /* Makes it easier to apply margins */
+		}
+        
     </style>
 </head>
 <body>
@@ -204,6 +211,7 @@
             <div class="div-3">Water Consumption</div>
             <form action="/MBIPproject2/form/submit" method="post"> <!-- Form tag added -->
                 <div class="div-4">
+               		<input type="hidden" name="uid" id="uid" value="${sessionScope.uid}">
                     <div class="div-5">
                         <label for="householdWaterUsage">Household Water Usage*</label>
                     </div>
@@ -213,7 +221,7 @@
                     </div>
                     <input type="text" class="textInput" id="outdoorWaterUsage" name="outdoorWaterUsage">
                     <div class="div-9">
-                        <input type="submit" value="Next" class="div-10"> <!-- Submit button -->
+                        <input type="submit" value="Next" class="div-10 next-button"> <!-- Submit button -->
                         <!-- Removed Log-in and Cancel buttons for simplicity -->
                     </div>
                 </div>

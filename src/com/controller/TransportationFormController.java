@@ -50,12 +50,12 @@ public class TransportationFormController {
 
             // Create an instance of the Transportation model
             Transportation transportation = new Transportation(fuelConsumed, distanceTravelled, emissionFactor);
+//            Transportation transportation = new Transportation();
 
             // Calculate transportation carbon
             double transportationCarbon = transportation.calculateTransportationCarbon();
 
-            String sql = "INSERT INTO transportation (Uid, date, fuel_consumed, distance_travelled, " +
-                    "vehicle_type, emission_factor, transportation_carbon, comment) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO transportation (Uid, date, fuel_consumed, distance_travelled, vehicle_type, emission_factor, transportation_carbon, comment) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
             PreparedStatement statement = conn.prepareStatement(sql);
 

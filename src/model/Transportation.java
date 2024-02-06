@@ -9,7 +9,16 @@ public class Transportation {
     private double distanceTravelled;  // in kilometers
     private double emissionFactor;  // carbon emission factor per liter
 
+    // Constructors, getters, and setters
+//    public Transportation() {
+//    }
 
+    public Transportation(double fuelConsumed, double distanceTravelled, double emissionFactor) {
+        this.fuelConsumed = fuelConsumed;
+        this.distanceTravelled = distanceTravelled;
+        this.emissionFactor = emissionFactor;
+    }
+    
     public double getFuelConsumed() {
         return fuelConsumed;
     }

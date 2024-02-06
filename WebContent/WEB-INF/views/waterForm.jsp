@@ -199,24 +199,25 @@
     </style>
 </head>
 <body>
-    <div class="div">
+     <div class="div">
         <div class="div-2">
             <div class="div-3">Water Consumption</div>
-            <div class="div-4">
-                <div class="div-5">
-                    <p style="text-align: left; float: left">Household Water Usage*</p>
+            <form action="/MBIPproject2/form/submit" method="post"> <!-- Form tag added -->
+                <div class="div-4">
+                    <div class="div-5">
+                        <label for="householdWaterUsage">Household Water Usage*</label>
+                    </div>
+                    <input type="text" class="textInput" id="householdWaterUsage" name="householdWaterUsage">
+                    <div class="div-7">
+                        <label for="outdoorWaterUsage">Outdoor Water Usage*</label>
+                    </div>
+                    <input type="text" class="textInput" id="outdoorWaterUsage" name="outdoorWaterUsage">
+                    <div class="div-9">
+                        <input type="submit" value="Next" class="div-10"> <!-- Submit button -->
+                        <!-- Removed Log-in and Cancel buttons for simplicity -->
+                    </div>
                 </div>
-                <input type="text" class="textInput">
-                <div class="div-7">
-                    <p style="text-align: left">Outdoor Water Usage*</p>
-                </div>
-                  <input type="text" class="textInput">
-                <div class="div-9">
-                    <div class="div-10">Next</div>
-                    <div class="div-11">Log-in</div>
-                    <div class="div-12">Cancel</div>
-                </div>
-            </div>
+            </form> <!-- Closing form tag -->
         </div>
     </div>
 </body>

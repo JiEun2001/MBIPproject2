@@ -55,8 +55,8 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/MBIPproject2/form/show">Water</a></li>
               <li><a class="dropdown-item" href="/MBIPproject2/electricForm/">Electric</a></li>
-              <li><a class="dropdown-item" href="#">Recycle</a></li>
-              <li><a class="dropdown-item" href="#">Transportation</a></li>
+              <li><a class="dropdown-item" href="/MBIPproject2/Recycle/">Recycle</a></li>
+              <li><a class="dropdown-item" href="/MBIPproject2/transportationForm/">Transportation</a></li>
             </ul>
           </li>     
           </li>

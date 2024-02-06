@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Energy Consumption</title>
+    <title>Electric Carbon Consumption</title>
     <style>
         .div {
             display: flex;
@@ -199,33 +199,36 @@
     </style>
 </head>
 <body>
+	<form action="/MBIPproject2/electricForm/submit-consumption" method="post">
     <div class="div">
         <div class="div-2">
-            <div class="div-3">Energy Consumption</div>
+            <div class="div-3">Electric Carbon Consumption</div>
             <div class="div-4">
                 <div class="div-5">
-                    <p style="text-align: left; float: left">Electricity Usage*</p>
+                    <p style="text-align: left; float: left">Date</p>
                 </div>
-                <input type="text" class="textInput" placeholder="Kwh">
+                <input type="date" id="date" class="textInput" name="date" placeholder="Current Date">
+                
                 <div class="div-7">
-                    <p style="text-align: left">Gas Usage*</p>
                 </div>
-                <input type="text" class="textInput" placeholder="m3">
+                <input type="number" id="meterReading" class="textInput" name="meterReading" placeholder="Kwh Amount" >
+                
                 <div class="div-7">
-                    <p style="text-align: left">Fuel Oil Usage*</p>
+                    <p style="text-align: left">Comments</p>
                 </div>
-                <input type="text" class="textInput" placeholder="liters">
-                <div class="div-7">
-                    <p style="text-align: left">Other Energy Sources*</p>
-                </div>
-                <input type="text" class="textInput">
+                <input type="text" id="comments" name="comments" class="textInput" placeholder="Your Comments" >
+                
                 <div class="div-9">
-                    <div class="div-10">Next</div>
-                    <div class="div-11">Log-in</div>
-                    <div class="div-12">Cancel</div>
+                    <div class="div-10">
+                    <button type="submit">Calculate</button>
+                    </div>
                 </div>
+                
             </div>
         </div>
     </div>
+    </form>
+
+    
 </body>
 </html>

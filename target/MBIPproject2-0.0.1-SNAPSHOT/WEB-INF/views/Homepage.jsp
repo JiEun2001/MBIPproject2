@@ -14,7 +14,7 @@
         }
         .bg-overlay {
             background: rgba(0, 0, 0, 0.45);
-            background-image: url('/MBIPproject2/images/homepage.png');
+            background-image: url('https://i.ibb.co/hdnngsm/homepage.png ');
             background-blend-mode: overlay;
             background-size: cover;
         }
@@ -78,10 +78,14 @@
             <div class="text-center">
                 <h1 class="text-6xl font-bold">LOW CARBON MONITORING SYSTEM</h1>
                 <p class="text-xl mt-4">"Low carbon initiatives, a global exchange."</p>
-                <div class="mt-8">
-                    <button class="bg-white text-green-600 font-bold py-2 px-4 rounded-full mr-4 hover:bg-green-100">Log-in</button>
-                    <button class="bg-green-600 font-bold py-2 px-4 rounded-full hover:bg-green-700">Register</button>
-                </div>
+                <div class="mt-8 flex justify-center">
+				    <form action="/MBIPproject2/account/" method="get" class="mr-2">
+				        <button class="bg-white text-green-600 font-bold py-2 px-4 rounded-full hover:bg-green-100">Log-in</button>
+				    </form>
+				    <form action="/MBIPproject2/account/signUp" method="get">
+				        <button class="bg-green-600 font-bold py-2 px-4 rounded-full hover:bg-green-700">Register</button>
+				    </form>
+				</div>
             </div>
             <div class="absolute bottom-0 left-0 p-5 text-sm">
                 <p>MBIP</p>

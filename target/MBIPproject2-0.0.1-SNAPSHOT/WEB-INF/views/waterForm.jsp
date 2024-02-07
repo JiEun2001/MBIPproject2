@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Water Consumption</title>
     <style>
         .div {
@@ -196,14 +197,34 @@
                 padding: 0 20px;
             }
         }
+        
+        .next-button {
+		  padding: 10px 20px; 
+		  display: block;
+		  width: 70%;
+    	  color: #fff;
+          text-align: center;
+          white-space: nowrap;
+          border-radius: 5px;
+          background-color: #8bc34a;
+          margin-top: 8px;
+          justify-content: center;
+          align-items: left;
+          padding: 12px 60px;
+          font: 400 20px Libre Franklin, sans-serif; /* Makes it easier to apply margins */
+		}
+        
     </style>
 </head>
 <body>
+<jsp:include page="header.jsp" />
+
      <div class="div">
         <div class="div-2">
             <div class="div-3">Water Consumption</div>
             <form action="/MBIPproject2/form/submit" method="post"> <!-- Form tag added -->
                 <div class="div-4">
+               		<input type="hidden" name="uid" id="uid" value="${sessionScope.uid}">
                     <div class="div-5">
                         <label for="householdWaterUsage">Household Water Usage*</label>
                     </div>
@@ -213,7 +234,7 @@
                     </div>
                     <input type="text" class="textInput" id="outdoorWaterUsage" name="outdoorWaterUsage">
                     <div class="div-9">
-                        <input type="submit" value="Next" class="div-10"> <!-- Submit button -->
+                        <input type="submit" value="Next" class="next-button " style="width: 70%;"> <!-- Submit button -->
                         <!-- Removed Log-in and Cancel buttons for simplicity -->
                     </div>
                 </div>

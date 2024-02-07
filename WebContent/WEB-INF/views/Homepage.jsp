@@ -40,7 +40,7 @@
 </head>
 <body class="bg-overlay">
     <div class="flex">
-        <div id="mySidebar" class="sidebar bg-gradient-to-b from-green-800 to-green-400 w-64 min-h-screen p-5">
+        <!-- <div id="mySidebar" class="sidebar bg-gradient-to-b from-green-800 to-green-400 w-64 min-h-screen p-5">
             <button onclick="toggleSidebar()" class="text-white focus:outline-none w-full text-left">
                 <i class="fas fa-times fa-lg p-5"></i> Close
             </button>
@@ -53,11 +53,11 @@
 	            <a href="#" class="bg-green-700 text-white py-2 px-4 rounded my-2">Recommendations</a>
 	            <a href="#" class="bg-green-700 text-white py-2 px-4 rounded my-2">Support</a>
              </div>
-        </div>
+        </div> -->
         
         <div class="flex-1 flex flex-col items-center justify-center h-screen text-white">
             <!-- Hamburger Icon -->
-            <div class="absolute top-0 left-0 p-5">
+           <!-- <div class="absolute top-0 left-0 p-5">
                 <button onclick="toggleSidebar()" class="text-white focus:outline-none">
                     <i class="fas fa-bars fa-2x"></i>
                 </button>
@@ -74,7 +74,7 @@
                         <i class="fas fa-user-circle fa-2x"></i>
                     </button>
                 </div>
-            </div>
+            </div>-->
             <div class="text-center">
                 <h1 class="text-6xl font-bold">LOW CARBON MONITORING SYSTEM</h1>
                 <p class="text-xl mt-4">"Low carbon initiatives, a global exchange."</p>

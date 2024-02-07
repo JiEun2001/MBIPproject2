@@ -194,7 +194,8 @@ hr {
             <script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
 			
 			<script>
-
+			  var now = new Date();
+			  var datetime = now.toLocaleString();
 			
 			function generatePDF(){
 				var pdfObject = jsPDFInvoiceTemplate.default(props);
@@ -249,8 +250,8 @@ hr {
 				    invoice: {
 				        label: "Report # : ",
 				        num: 001,
-				        invDate: "Payment Date: 01/01/2021 18:12",
-				        invGenDate: "Invoice Date: 02/02/2021 10:17",
+				        invDate: "Payment Date: 02/07/2024",
+				        invGenDate: "Invoice Date: 02/07/2024",
 				        headerBorder: false,
 				        tableBodyBorder: false,
 				        header: [
@@ -263,13 +264,13 @@ hr {
 				          { 
 				            title: "Title",
 				            style: {
-				              width: 80
+				              width: 60
 				            } 
 				          }, 
 				          { 
 				            title: "Date and Time",
 				            style: {
-				              width: 40
+				              width: 30
 				            } 
 				          }, 
 				          { title: "Water"},
@@ -280,11 +281,11 @@ hr {
 				        table: Array.from(Array(1), (item, index)=>([
 				            index + 1,
 				            "MBIP Low Carbon Monitoring System ",
-				            "2/7/2024",
-				            "${electricTotal}",
-				            "${waterTotal}",
-				            "${recyTotal}",
-				            "${transTotal}"
+				            "02/07/2024",
+				            "${electricTotal} kgCO2",
+				            "${waterTotal} kgCO2",
+				            "${recyTotal} kgCO2",
+				            "${transTotal} kgCO2"
 				        ])),
 				        additionalRows: [{
 				            col1: 'Total:',

@@ -29,6 +29,14 @@
     color: #8F8F8F; /* White color */
   }
   
+  footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+  
   
 	
   </style>
@@ -89,7 +97,7 @@
     <div class="container">
       <div class="row">
         
-<!--   Mundo Inteiro       -->
+<!--   Mundo Inteiro      
         <div class="col-12 col-md-4">
           <div class="card  mb-6 mb-md-0" style="width: 18rem;">
             <div class="card-body">
@@ -104,9 +112,9 @@
 
             </div>
           </div>
-        </div>
+        </div> -->
 
-<!-- Experiência Personalizada -->
+<!-- Experiência Personalizada 
         <div class="col-12 col-md-4">
           <div class="card mb-6 mb-md-0" style="width: 18rem; ">
             <div class="card-body ">
@@ -118,9 +126,9 @@
 
             </div>
           </div>
-        </div>
+        </div>-->
 
-<!-- Atendimento 24h  -->
+<!-- Atendimento 24h 
         <div class="col-12 col-md-4 ">
           <div class="card  mb-6 mb-md-0" style="width: 18rem;">
             <div class="card-body">
@@ -135,7 +143,7 @@
             </div>
           </div>
 
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -167,7 +175,7 @@
 
 
 
-  <footer class="mt-3 text-center bg-body-tertiary">
+  <footer class="mt-3 text-center bg-body-tertiary footer">
     <h2 style="font-size: 1rem;">Contact</h2>
     <ul style="list-style-type: none;">
 

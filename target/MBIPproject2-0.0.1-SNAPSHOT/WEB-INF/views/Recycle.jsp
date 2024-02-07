@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Energy Consumption</title>
+    <title>Recycle Activities</title>
     <style>
         .div {
             display: flex;
@@ -196,9 +196,29 @@
                 padding: 0 20px;
             }
         }
+        
+        .next-button {
+		  padding: 10px 20px; 
+		  display: block;
+		  width: 70%;
+    	  color: #fff;
+          text-align: center;
+          white-space: nowrap;
+          border-radius: 5px;
+          background-color: #8bc34a;
+          margin-top: 8px;
+          justify-content: center;
+          align-items: left;
+          padding: 12px 60px;
+          font: 400 20px Libre Franklin, sans-serif; /* Makes it easier to apply margins */
+		}
     </style>
 </head>
+
+<jsp:include page="header.jsp" />
+
 <body>
+	<form action="/MBIPproject2/Recycle/submit-reConsumption" method="post">
     <div class="div">
         <div class="div-2">
             <div class="div-3">Recycle Activity</div>
@@ -206,19 +226,23 @@
                 <div class="div-5">
                     <p style="text-align: left; float: left">Recycled Item(s)</p>
                 </div>
-                <input type="text" class="textInput" >
+                 <input type="reItem" id="reItem" class="textInput" name="reItem" placeholder="Clothes, Batteries, etc">
                 <div class="div-7">
                     <p style="text-align: left">Total item recycled*</p>
                 </div>
-                <input type="text" class="textInput" >
-         
+                <input type="reTotalItem" id="reTotalItem" class="textInput" name="reTotalItem" placeholder="2">
+                <div class="div-7">
+                    <p style="text-align: left">Recycle Weight*</p>
+                </div>
+                <input type="reWeight" id="reWeight" class="textInput" name="reWeight" placeholder="10">
+
                 <div class="div-9">
-                    <div class="div-10">Next</div>
-                    <div class="div-11">Log-in</div>
-                    <div class="div-12">Cancel</div>
+                    <input type="submit" value="Calculate" class=" next-button"> <!-- Submit button -->
+                    <!-- Removed Log-in and Cancel buttons for simplicity -->
                 </div>
             </div>
         </div>
     </div>
+    </form>
 </body>
 </html>
